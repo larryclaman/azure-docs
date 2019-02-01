@@ -70,7 +70,7 @@ The following tables show the different fault types (id under results from the p
 | ConnectionEntityNotFound | Connection configuration is missing | No |
 | ConnectionIsMarkedDisconnected | The connection is marked "disconnected" |No|
 | ConnectionNotConfiguredOnGateway | The underlying service does not have the connection configured. | Yes |
-| ConnectionMarkedStandy | The underlying service is marked as standby.| Yes|
+| ConnectionMarkedStandby | The underlying service is marked as standby.| Yes|
 | Authentication | Preshared key mismatch | Yes|
 | PeerReachability | The peer gateway is not reachable. | Yes|
 | IkePolicyMismatch | The peer gateway has IKE policies that are not supported by Azure. | Yes|
@@ -208,7 +208,7 @@ Elapsed Time            330 sec
 
 ## Next steps
 
-Learn how to diagnose VPN Gateways and Connections through the portal by visiting [Gateway troubleshooting - Azure portal](network-watcher-troubleshoot-manage-portal.md).
+To learn how to diagnose a problem with a gateway or gateway connection, see [Diagnose communication problems between networks](diagnose-communication-problem-between-networks.md).
 <!--Image references-->
 
 [1]: ./media/network-watcher-troubleshoot-overview/GatewayTenantWorkerLogs.png

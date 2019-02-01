@@ -10,18 +10,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 02/07/2018
+
+ms.topic: conceptual
+ms.date: 12/07/2018
 ms.author: jingwang
 
 ---
-# Copy data from MariaDB using Azure Data Factory 
+# Copy data from MariaDB using Azure Data Factory
 
 This article outlines how to use the Copy Activity in Azure Data Factory to copy data from MariaDB. It builds on the [copy activity overview](copy-activity-overview.md) article that presents a general overview of copy activity.
-
-> [!NOTE]
-> This article applies to version 2 of Data Factory, which is currently in preview. If you are using version 1 of the Data Factory service, which is generally available (GA), see [Copy Activity in V1](v1/data-factory-data-movement-activities.md).
 
 ## Supported capabilities
 
@@ -29,11 +26,11 @@ You can copy data from MariaDB to any supported sink data store. For a list of d
 
 Azure Data Factory provides a built-in driver to enable connectivity, therefore you don't need to manually install any driver using this connector.
 
-This connector currently supports MariaDB of version less than 10.2.
+This connector currently supports MariaDB of version 10.0 to 10.2.
 
 ## Getting started
 
-[!INCLUDE [data-factory-v2-connector-get-started-2](../../includes/data-factory-v2-connector-get-started-2.md)]
+[!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
 The following sections provide details about properties that are used to define Data Factory entities specific to MariaDB connector.
 
@@ -56,8 +53,8 @@ The following properties are supported for MariaDB linked service:
         "type": "MariaDB",
         "typeProperties": {
             "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<host>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
+                "type": "SecureString",
+                "value": "Server=<host>;Port=<port>;Database=<database>;UID=<user name>;PWD=<password>"
             }
         },
         "connectVia": {
@@ -84,7 +81,8 @@ To copy data from MariaDB, set the type property of the dataset to **MariaDBTabl
         "linkedServiceName": {
             "referenceName": "<MariaDB linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -93,14 +91,14 @@ To copy data from MariaDB, set the type property of the dataset to **MariaDBTabl
 
 For a full list of sections and properties available for defining activities, see the [Pipelines](concepts-pipelines-activities.md) article. This section provides a list of properties supported by MariaDB source.
 
-### MariaDBSource as source
+### MariaDB as source
 
 To copy data from MariaDB, set the source type in the copy activity to **MariaDBSource**. The following properties are supported in the copy activity **source** section:
 
 | Property | Description | Required |
 |:--- |:--- |:--- |
 | type | The type property of the copy activity source must be set to: **MariaDBSource** | Yes |
-| query | Use the custom SQL query to read data. For example: `"SELECT * FROM MyTable"`. | Yes |
+| query | Use the custom SQL query to read data. For example: `"SELECT * FROM MyTable"`. | No (if "tableName" in dataset is specified) |
 
 **Example:**
 

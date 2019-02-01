@@ -3,7 +3,7 @@ title: Tutorial - Monitor and update Windows virtual machines in Azure | Microso
 description: In this tutorial, you learn how to monitor boot diagnostics and performance metrics, and manage package updates on a Windows virtual machine
 services: virtual-machines-windows
 documentationcenter: virtual-machines
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -15,7 +15,7 @@ ms.topic: tutorial
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 05/04/2017
-ms.author: iainfou
+ms.author: cynthn
 ms.custom: mvc
 
 #Customer intent: As an IT administrator, I want to learn about monitoring and update management so that I can review the health status, perform troubleshooting, and install updates on Windows virtual machines.
@@ -38,7 +38,7 @@ In this tutorial, you learn how to:
 > * Monitor changes and inventory
 > * Set up advanced monitoring
 
-This tutorial requires the Azure PowerShell module version 5.7.0 or later. Run `Get-Module -ListAvailable AzureRM` to find the version. If you need to upgrade, see [Install Azure PowerShell module](/powershell/azure/install-azurerm-ps).
+This tutorial requires the Azure PowerShell module version 5.7.0 or later. Run `Get-Module -ListAvailable AzureRM` to find the version. If you need to upgrade, see [Install Azure PowerShell module](/powershell/azure/azurerm/install-azurerm-ps).
 
 ## Create virtual machine
 
@@ -274,9 +274,9 @@ Set-AzureRmVMExtension -ResourceGroupName "myResourceGroupMonitor" `
   -Location "East US"
 ```
 
-After a few minutes, you should see the new VM in the Log Anaytics workspace.
+After a few minutes, you should see the new VM in the Log Analytics workspace.
 
-![OMS blade](./media/tutorial-monitoring/tutorial-monitor-oms.png)
+![Log Analytics blade](./media/tutorial-monitoring/tutorial-monitor-oms.png)
 
 ## Next steps
 
